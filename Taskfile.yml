@@ -1,0 +1,22 @@
+default:
+  desc: 帮助文件
+  cmds:
+    - task -l
+
+build:
+  desc: 构建docker镜像
+  cmds:
+      - docker build -t fireworq .
+      - docker tag fireworq registry.yuanbenlian.com/yuanben/fireworq
+
+push:
+  desc: docker push
+  cmds:
+      - docker push registry.yuanbenlian.com/yuanben/fireworq
+
+test:
+  desc: fireworq docker test
+  cmds:
+    - docker run --rm -it -p 8080:8080 -e "MYSQL_DSN=root:123456@tcp(127.0.0.1:3306)/fireworq?charset=utf8mb4&parseTime=True" fireworq
+
+
