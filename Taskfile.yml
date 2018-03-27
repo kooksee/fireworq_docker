@@ -17,6 +17,6 @@ push:
 test:
   desc: fireworq docker test
   cmds:
-    - docker run --rm -it -p 8080:8080 -e "MYSQL_DSN=root:123456@tcp(127.0.0.1:3306)/fireworq?charset=utf8mb4&parseTime=True" fireworq
+    - docker run --rm -it -p 8081:8080 -e "MYSQL_DSN=root:123456@tcp(127.0.0.1:3306)/fireworq?charset=utf8mb4&parseTime=True" fireworq
 
 
